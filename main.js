@@ -38,6 +38,10 @@ btn.addEventListener("click",function() {
         add_error('Please input a valid url');
         return;
     }
+    if (input_url.includes('dynamic')) {
+        add_error('That is a dynamic link. Please enter a static link.');
+        return;
+    }
 
     if (input_url.includes('.com/') == true) {
         if (input_url.includes('?o=')) {
