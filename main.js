@@ -1,7 +1,29 @@
 var resultsContainer = document.getElementById("results");
 var btn = document.getElementById("submit_btn");
+var ip = "";
+
+function callback (response) {
+    console.log(response);
+
+}
+
+$.ajax({
+    type: 'GET',
+    dataType:'json',
+    url:'https://geoip-db.com/json/',
+    success: function(responseData) {
+        ip = responseData.IPv4;
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown){
+        console.log('Error');
+    }
+    
+})
+
 
 btn.addEventListener("click",function() {
+
+
     var input_url = document.getElementById('input_link').value;
     if (input_url == ''){
         add_error('Please input a url');
@@ -30,7 +52,7 @@ btn.addEventListener("click",function() {
     }
     console.log(input_url)
     
-    var url = 'https://BypassAPI.jonathanlin04.repl.co/' + input_url;
+    var url = 'https://Bypasser-API.glasstea.repl.co' + input_url + '/' + ip;
 
     var ourRequest = new XMLHttpRequest();
     ourRequest.open('GET',url)
