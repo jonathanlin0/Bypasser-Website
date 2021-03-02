@@ -11,9 +11,13 @@ function ip2int(ip) {
     return ip.split('.').reduce(function(ipInt, octet) { return (ipInt<<8) + parseInt(octet, 10)}, 0) >>> 0;
 }
 
+
+  
+
 $.ajax({
     type: 'GET',
     dataType:'json',
+    async:false,
     url:'https://geoip-db.com/json/',
     success: function(responseData) {
         ip = ip2int(responseData.IPv4);
@@ -25,6 +29,20 @@ $.ajax({
     
 })
 
+window.onload = function() {
+
+    var url = 'https://Bypasser-API.glasstea.repl.co/' + ip;
+
+    var ourRequest = new XMLHttpRequest();
+    ourRequest.open('GET',url)
+    ourRequest.onload = function() {
+        console.log('hello!')
+        console.log(ip)
+        console.log(ourRequest.responseText);
+    };
+    ourRequest.send();
+    return 'hi'
+};
 
 btn.addEventListener("click",function() {
 
