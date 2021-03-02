@@ -7,12 +7,17 @@ function callback (response) {
 
 }
 
+function ip2int(ip) {
+    return ip.split('.').reduce(function(ipInt, octet) { return (ipInt<<8) + parseInt(octet, 10)}, 0) >>> 0;
+}
+
 $.ajax({
     type: 'GET',
     dataType:'json',
     url:'https://geoip-db.com/json/',
     success: function(responseData) {
-        ip = responseData.IPv4;
+        ip = ip2int(responseData.IPv4);
+        
     },
     error: function(XMLHttpRequest, textStatus, errorThrown){
         console.log('Error');
@@ -52,7 +57,7 @@ btn.addEventListener("click",function() {
     }
     console.log(input_url)
     
-    var url = 'https://Bypasser-API.glasstea.repl.co' + input_url + '/' + ip;
+    var url = 'https://Bypasser-API.glasstea.repl.co/' + input_url + '/' + ip;
 
     var ourRequest = new XMLHttpRequest();
     ourRequest.open('GET',url)
