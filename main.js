@@ -96,6 +96,6 @@ function add_error(error_code) {
 }
 
 function add_link(data) {
-    resultsContainer.insertAdjacentHTML('beforeend','<p>' + data.new_link + '</p>');
+    resultsContainer.insertAdjacentHTML('afterbegin','<p>' + data.new_link + '</p>');
     console.log(data)
 }
