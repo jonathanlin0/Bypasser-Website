@@ -18,10 +18,9 @@ $.ajax({
     type: 'GET',
     dataType:'json',
     async:false,
-    url:'https://geoip-db.com/json/',
+    url:'https://httpbin.org/ip',
     success: function(responseData) {
-        ip = ip2int(responseData.IPv4);
-        
+        ip = ip2int(responseData.origin);
     },
     error: function(XMLHttpRequest, textStatus, errorThrown){
         console.log('Error');
@@ -37,7 +36,6 @@ window.onload = function() {
     ourRequest.open('GET',url)
     ourRequest.onload = function() {
         console.log('hello!')
-        console.log(ip)
         console.log(ourRequest.responseText);
     };
     ourRequest.send();
@@ -91,7 +89,7 @@ btn.addEventListener("click",function() {
 });
 
 function add_error(error_code) {
-    resultsContainer.insertAdjacentHTML('beforeend','<p>' + error_code+ '</p>');
+    resultsContainer.insertAdjacentHTML('afterbegin','<p>' + error_code+ '</p>');
     console.log(error_code)
 }
 
