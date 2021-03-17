@@ -11,6 +11,19 @@ p {
     font-size: 30px;
 }
 
+.link {
+    font-family: helvetica,Arial, sans-serif;
+    color:#990000;
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+    font-size: 30px;
+}
+
+.link:hover {
+    color:#0000FF;
+}
+
 
 
 h3 {
@@ -21,7 +34,7 @@ h3 {
     margin-bottom: 60px;
     margin-left: auto;
     margin-right:auto;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .info {
@@ -54,7 +67,7 @@ h1 {
     padding-bottom: 0px;
     color:#168A8C;
     text-align: center;
-    font-size: 100px;
+    font-size: 70px;
 }
 
 .link {
