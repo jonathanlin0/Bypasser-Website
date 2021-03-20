@@ -23,6 +23,7 @@
 
 body {
     background-color: #E9ECEF;
+    overflow-x: hidden;
 }
 
 p {
