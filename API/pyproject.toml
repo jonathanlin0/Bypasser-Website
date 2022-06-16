@@ -1,0 +1,10 @@
+[tool]
+[tool.poetry]
+authors = ["Your Name <you@example.com>"]
+name = "root"
+version = "0.0.0"
+description = ""
+[tool.poetry.dependencies]
+flask = "*"
+python = "^3.8"
+flask-cors = "^3.0.10"
